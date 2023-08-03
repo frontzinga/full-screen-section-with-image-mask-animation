@@ -1,0 +1,169 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 400;
+    min-height: 100vh;
+    width: 100%;
+    font-family: 'IBM Plex Serif', serif;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.mask {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    padding: 3rem;
+}
+
+.l .mask {
+    background-image: url(/img/l-mask.png);
+}
+
+.k .mask {
+    background-image: url(/img/k-mask.png);
+}
+
+h2 {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+button {
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-weight: 700;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 0.25rem;
+    font-family: 'IBM Plex Serif', serif;
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background: #fff;
+    color: #333;
+}
+
+.close {
+    width: 3rem;
+    height: 3rem;
+    color: #999;
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    cursor: pointer;
+    z-index: 4;
+}
+
+.inner {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 800px;
+}
+
+.l .bg {
+    background-image: url(/img/l.webp);
+    background-color: #b8cbcb;
+}
+
+.k .bg {
+    background-image: url(/img/kira.webp);
+    background-color: #cdbbb8;
+}
+
+.text {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 50%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    background: #fff;
+}
+
+.text .box {
+    padding: 4rem;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+h3 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.transition .mask {
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.animate .mask {
+    transform: scale(10);
+    opacity: 0;
+}
+
+.transition .bg {
+    transition: background-position 1s ease;
+}
+
+.animate .bg {
+    background-position: left;
+}
+
+.transition .text {
+    transition: left 1s ease;
+}
+
+.animate .text {
+    left: 50%;
+}
+
+.animate-completed .mask {
+    display: none;
+}
